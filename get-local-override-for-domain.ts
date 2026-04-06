@@ -103,7 +103,7 @@ try {
     }
 
     const categoriesResponse = await fetch(
-        "https://${firewall}/api/v2/cmdb/webfilter/ftgd-local-cat",
+        `https://${firewall}/api/v2/cmdb/webfilter/ftgd-local-cat`,
         { headers },
     );
 

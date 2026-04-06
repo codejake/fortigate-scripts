@@ -74,7 +74,7 @@ const parseFqdn = (value: string) => {
 try {
   const url = parseFqdn(input);
   const response = await fetch(
-    "https://${firewall}/api/v2/monitor/utm/rating-lookup/select",
+    `https://${firewall}/api/v2/monitor/utm/rating-lookup/select`,
     {
       method: "POST",
       headers: {
