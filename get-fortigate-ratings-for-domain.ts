@@ -1,3 +1,5 @@
+#!/usr/bin/env bun run
+
 const input = process.argv[2];
 
 if (!input) {
