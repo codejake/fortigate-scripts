@@ -27,11 +27,11 @@ Looks up the FortiGuard rating for a domain or URL.
 Run it with either a bare domain or a full URL:
 
 ```bash
-bun run get-fortigate-ratings-for-domain.ts urlpush.net
+bun run get-fortigate-ratings-for-domain.ts "urlpush.net"
 ```
 
 ```bash
-bun run get-fortigate-ratings-for-domain.ts https://urlpush.net/some/path
+bun run get-fortigate-ratings-for-domain.ts "https://urlpush.net/some/path"
 ```
 
 Example output:
@@ -50,11 +50,11 @@ Looks up the FortiGate local override for a domain or URL.
 Run it with either a bare domain or a full URL:
 
 ```bash
-bun run get-local-override-for-domain.ts urlpush.net
+bun run get-local-override-for-domain.ts "urlpush.net"
 ```
 
 ```bash
-bun run get-local-override-for-domain.ts https://urlpush.net/some/path
+bun run get-local-override-for-domain.ts "https://urlpush.net/some/path"
 ```
 
 If a local override exists, the script prints the resolved URL, override status, and category:
