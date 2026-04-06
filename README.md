@@ -4,6 +4,7 @@ Small Bun scripts for doing stuff with a FortiGate firewall.
 
 ## Requirements
 
+- Fortigate with FortiOS 7.6 (new auth scheme)
 - [Bun](https://bun.com)
 - A `.env` file in this repo with:
 
