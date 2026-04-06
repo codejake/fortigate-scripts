@@ -32,7 +32,9 @@ const yellow = (value: string) => color(33, value);
 const magenta = (value: string) => color(35, value);
 const red = (value: string) => color(31, value);
 
-const colorCategory = (value: string) => {
+const formatCategory = (value: unknown) => {
+  if (typeof value !== "string" || !value.trim()) return yellow("Unknown");
+
   const text = value.toLowerCase();
 
   if (
@@ -55,11 +57,6 @@ const colorCategory = (value: string) => {
 
   return cyan(value);
 };
-
-if (!token) {
-  console.error("Missing FORTIGATE_TOKEN in .env");
-  process.exit(1);
-}
 
 // Accept either a bare domain or a full URL.
 const parseFqdn = (value: string) => {
@@ -98,9 +95,9 @@ try {
     process.exit(1);
   }
 
-  console.log(`${bold("Fortiguard rating for")} ${cyan(result.url)}\n`);
-  console.log(`${dim("category:")} ${colorCategory(result.category)}`);
-  console.log(`${dim("subcategory:")} ${colorCategory(result.subcategory)}\n`);
+  console.log(`${bold("Fortiguard rating for")} ${cyan(result.url ?? url)}\n`);
+  console.log(`${dim("category:")} ${formatCategory(result.category)}`);
+  console.log(`${dim("subcategory:")} ${formatCategory(result.subcategory)}\n`);
 } catch (error) {
   console.error(red(error instanceof Error ? error.message : String(error)));
   process.exit(1);
